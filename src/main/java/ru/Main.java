@@ -3,6 +3,55 @@ package ru;
 public class Main {
     public static void main(String[] args) {
 
+        /*Задача 3
+        Практика ООП. Инкапсуляция #3. Студент
+        Создайте класс Студент (Student), которая описывается:
+
+        Имя (name): строка
+        Оценки (grades): массив целых чисел
+        При создании обязательно указать имя, и опционально набор оценок
+        Может возвращать текстовое представление вида “Имя: [оценка1, оценка2,…,оценкаN]” (toString)
+        Оценки можно добавлять в любой момент, но нельзя удалять
+        Все оценки должны быть в диапазоне от 2 до 5
+        Весь набор оценок можно получить в любой момент
+        Задача считается решенной корректно, если выполняются требования инкапсуляции.*/
+
+        //студент
+        Student student1 = new Student("Петров Петр");
+        System.out.println("Студент без оценок: " + student1);
+        // Добавляем оценки
+        student1.addGrade(2);
+        student1.addGrade(5);
+        student1.addGrade(3);
+        System.out.println("\nСтуденту насыпали оценок: " + student1); //Петров Петр 2, 5, 3
+
+        //--
+        //студент + оценка
+        int[] initialGrades = {4, 4, 2, 5, 3};
+        Student student2 = new Student("Сидоров Сидр", initialGrades);
+        System.out.println("\nЗавели Сидоров Сидр + насыпали оценок: " + student2); //Сидоров Сидр 4, 4, 2, 5, 3
+
+        // Добавляем еще оценок
+        student2.addGrade(5);
+        student2.addGrade(4);
+        student2.addGrade(2);
+        System.out.println("\n Добавили оценок Сидоров Сидр : " + student2); //Сидоров Сидр 4, 4, 2, 5, 3, 5, 4, 2
+
+        //Выведеи обоих студено в анализ
+        System.out.println("\nПетров Петр: " + student1.getGrades());
+        System.out.println("Количество оценок: " + student1.getGradesCount());
+        System.out.println("Сидоров Сидр: " + student2.getGrades());
+        System.out.println("Количество оценок: " + student2.getGradesCount());
+
+        //Проверим граничные значение 2 и 5
+        int[] initialGrades2 = {1, 6};
+        Student student3 = new Student("Иванов Иван", initialGrades2);
+        System.out.println("\nПроверили граничные значения на Иванов Иван: " + student3); //Иванов Иван IllegalArgumentException("Оценка должна быть в диапазоне от 2 до 5")
+
+    }
+}
+
+
         /*Задача 2
         Практика ООП. *Инкапсуляция #2. Квадрат - задание необязательное
         Данное задание не является обязательным для решения. Вы можете выполнить его для дополнительной тренировки навыка по данной теме
@@ -21,6 +70,7 @@ public class Main {
         Задача считается решенной корректно, если выполняются требования инкапсуляции.*/
 
         // Создаем квадрат
+        /*
         Square square = new Square(1, 4, 10);
         System.out.println(square); // Квадрат в точке (1, 4 со стороной 10)
 
@@ -29,6 +79,7 @@ public class Main {
         square.setY(15);
         square.setSideLength(25);
         System.out.println(square); // Квадрат в точке (10, 15 со стороной 25)
+        */
 
 
         /*Задача 1
@@ -63,5 +114,3 @@ public class Main {
         System.out.println("f3 = " + f3);
         System.out.println("f1.sum(f2).sum(f3).minus(5) = " + result);
          */
-    }
-}
