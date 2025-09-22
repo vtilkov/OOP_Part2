@@ -3,25 +3,56 @@ package ru;
 public class Main {
     public static void main(String[] args) {
 
+        /*Задача Практика ООП. Полиморфизм #6. Сложение
+        Практика ООП. Полиморфизм #6. Сложение
+        Разработайте метод (sumAll), который принимает набор числовых значений и возвращает их сумму в вещественной форме.
+        С использованием данного метода выполните следующие сложения:*/
+
+        //Пример 1
+        System.out.println("Пример 1: 2 + 3/5 + 2.3");
+        int a1 = 2;
+        double b1 = 2.3;
+        Fraction frac1 = new Fraction(3,5);
+        double res = Summ.sumAll(a1,frac1,b1);
+        System.out.println("Результат сложения: 2 + 3/5 + 2.3 = " + res);
+
+        //Пример 2
+        System.out.println("\nПример 2: 3.6 + 49/12 + 3 + 3/2");
+        int a2 = 3;
+        double b2 = 3.6;
+        Fraction frac2a = new Fraction(49,12);
+        Fraction frac2b = new Fraction(3,2);
+        double res2 = Summ.sumAll(b2,frac2a,a2,frac2b);
+        System.out.println("Результат сложения: 3.6 + 49/12 + 3 + 3/2 = " + res2);
+
+        //Пример 3
+        System.out.println("\nПример 3: 1/3 + 1");
+        int a3 = 1;
+        Fraction frac3 = new Fraction(1,3);
+        double res3 = Summ.sumAll(frac3, a3);
+        System.out.println("Результат сложения: 1/3 + 1 = " + res3);
+
         /*Задача Практика ООП. Полиморфизм #5. Дробь это число
         Имеется класс, описывающий Дробь
         Сделайте так, чтобы она была подтипом класса Number, который входит в стандартную редакцию языка Java. Вместо класса, приведенного в задании, можно использовать сделанный ранее самостоятельно класс Дроби.
         Обратите внимание, что необходимо будет реализовать набор абстрактных методов класса Number. Получение всех форм представления Number выполняется делением числителя на знаменатель.*/
 
+        /*
         //дробь
         Fraction f1 = new Fraction(1, 3); // 1/3
         Fraction f2 = new Fraction(2, 5); // 2/5
 
         //создание как number
-        System.out.println("Дробь 1: " + f1);
-        System.out.println(" значение: " + f1.intValue());
-        System.out.println(" двойное значение: " + f1.doubleValue());
-        System.out.println(" плавающее значение: " + f1.floatValue());
-        System.out.println(" длина: "+ f1.longValue());
+        System.out.println("\n Дробь 1: " + f1);
+        System.out.println("\n значение: " + f1.intValue());
+        System.out.println("\n двойное значение: " + f1.doubleValue());
+        System.out.println("\n плавающее значение: " + f1.floatValue());
+        System.out.println("\n длина: "+ f1.longValue());
 
         //арифметическая операция
         Fraction sum = f1.sum(f2);
         System.out.println(sum + " " + sum.doubleValue());
+        */
 
         /*Задача 4
         Практика ООП. *Инкапсуляция #4. Сотрудники и отделы - задание необязательное
