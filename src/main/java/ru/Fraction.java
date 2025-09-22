@@ -1,6 +1,6 @@
 package ru;
 
-public final class Fraction {
+public final class Fraction extends Number {
 
     private final int numerator; // final (неизменяемость)
     private final int denominator; // final (неизменяемость)
@@ -84,5 +84,30 @@ public final class Fraction {
     @Override
     public String toString() {
         return numerator + "/" + denominator;
+    }
+
+    //Задача Практика ООП. Полиморфизм #5. Дробь это число
+    // Переопределение метода intValue()
+    @Override
+    public int intValue() {
+        return (int) doubleValue();
+    }
+
+    // Переопределение метода longValue()
+    @Override
+    public long longValue() {
+        return (long) doubleValue();
+    }
+
+    // Переопределение метода floatValue()
+    @Override
+    public float floatValue() {
+        return (float) doubleValue();
+    }
+
+    // Переопределение метода doubleValue()
+    @Override
+    public double doubleValue() {
+        return (double) numerator / denominator;
     }
 }
